@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fan Management</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>Fan Management</h1>
+
+    <div class="file-input">
+      <label for="jsonFile">Drop JSON file here or click to browse</label>
+      <input type="file" id="jsonFile" accept=".json">
+    </div>
+
+    <div class="fan-list">
+      <h2>Fan List</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Model Name</th>
+            <th>Fan Size</th>
+            <th>Finish</th>
+            <th>Category</th>
+            <th>URL Code</th>
+            <th>Variations</th>
+            <th>Related</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="fanTableBody">
+        </tbody>
+      </table>
+    </div>
+
+    <div class="fan-form">
+      <h2>Add/Edit Fan</h2>
+      <form id="fanForm">
+        <input type="text" id="urlCode" name="urlCode" placeholder="URL Code" required>
+        <input type="text" id="modelName" name="modelName" placeholder="Model Name" required>
+        <input type="text" id="fanSize" name="fanSize" placeholder="Fan Size" required>
+        <input type="text" id="fanFinish" name="fanFinish" placeholder="Fan Finish" required>
+        <input type="text" id="variations" name="variations" placeholder="Variations (comma-separated)">
+        <input type="text" id="related" name="related" placeholder="Related (comma-separated)">
+        <input type="text" id="category" name="category" placeholder="Category" required>
+        <button type="submit">Save Fan</button>
+        <button type="button" class="delete" id="deleteButton" style="display:none;">Delete Fan</button>
+      </form>
+      <div class="error-message" id="errorMessage" style="display:none;"></div>
+    </div>
+
+    <div class="save-download-buttons">
+      <button id="saveToLocalStorage">Save to Local Storage</button>
+      <button id="downloadJson">Download JSON</button>
+    </div>
+  </div>
+
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>
